@@ -1,4 +1,6 @@
 <div>
+    <livewire:contact-create :kontak="$contacts"></livewire:contact-create>
+    {{-- binding variabel kontak dengan data contacts disini --}}
     <table class="table">
         <thead class="thead-dark">
             <tr>
