@@ -1,5 +1,6 @@
 <div>
-    <form wire:submit.prevent="store">
+    <form wire:submit.prevent="update">
+        <input type="hidden" name="" wire:model="contactId">
         <div class="form-group">
             <div class="form-row"> {{-- error ga nampil, bug nih --}}
                 <div class="col">
@@ -30,6 +31,6 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+        <button type="submit" class="btn btn-sm btn-primary">Update</button>
     </form>
 </div>

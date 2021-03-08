@@ -1,6 +1,17 @@
 <div>
+    @if (session()->has('success'))
+    <div class="alert alert-success">
+        {{session('success')}}
+    </div>
+    @endif
     {{-- <livewire:contact-create :kontak="$contacts"></livewire:contact-create> --}}
+    
+    @if ($statusUpdate)
+    <livewire:contact-update></livewire:contact-update>
+    @else
     <livewire:contact-create></livewire:contact-create>
+    @endif
+
     <hr>
     {{-- binding variabel kontak dengan data contacts disini --}}
     <table class="table">
@@ -21,7 +32,7 @@
                 <td>{{ $contact->name }}</td>
                 <td>{{ $contact->phone }}</td>
                 <td>
-                    <button class="btn-sm btn-info text-white">Edit</button>
+                    <button wire:click="getContact({{ $contact->id }})" class="btn-sm btn-info text-white">Edit</button>
                     <button class="btn-sm btn-danger text-white">Delete</button>
                 </td>
             </tr>
